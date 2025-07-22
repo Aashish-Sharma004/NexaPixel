@@ -71,7 +71,11 @@ header.scrolled {
     color: rgb(245, 203, 52);
 }
 
-
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
 
 .section {
   padding: 80px 20px;
@@ -937,6 +941,11 @@ body {
 /* - MEDIA QUERIES -- */
 
 @media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+  
   .navbar {
     flex-direction: column;
     gap: 15px;
