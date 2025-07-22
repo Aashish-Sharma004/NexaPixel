@@ -24,5 +24,6 @@
 
 ---
 
-## 📂 Folder Structure
+🔗 **Live Demo**: [Click to View Website](https://aashish-sharma004.github.io/NexaPixel/)
+
 
