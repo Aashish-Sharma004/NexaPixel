@@ -16,7 +16,7 @@
     <nav class="navbar">
       <div class="logo">NexaPixels</div>
       <div class="hamburger"
-        onclick="toggleMenu()">☰</div>
+        onclick="toggleMenu(this)">☰</div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -441,10 +441,18 @@
   </div>
 </footer>
 
+
 <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
+  function toggleMenu(hamburger) {
+    var navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+
+    // Toggle icon ☰ ↔ ✖
+    if (navLinks.classList.contains("active")) {
+      hamburger.innerHTML = "✖"; // Close icon
+    } else {
+      hamburger.innerHTML = "☰"; // Hamburger icon
+    }
   }
 </script>
 
