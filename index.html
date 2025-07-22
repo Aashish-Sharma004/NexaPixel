@@ -13,21 +13,22 @@
 <body>
   <header>
 
-    <nav class="navbar">
-      <div class="logo">NexaPixels</div>
-      <div class="hamburger"
-        onclick="toggleMenu(this)">☰</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work Process</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-             <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+ <nav class="navbar">
+    <div class="logo">NexaPixel</div>
+
+    <div class="hamburger" onclick="toggleMenu(this)">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#work" onclick="closeMenu()">Work Process</a></li>
+      <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+      <li><a href="#team" onclick="closeMenu()">Team</a></li>
+      <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
   </header>
 
   <section id="home" class="section home">
@@ -447,11 +448,22 @@
     var navLinks = document.getElementById("navLinks");
     navLinks.classList.toggle("active");
 
-    // Toggle icon ☰ ↔ ✖
+    // Toggle icon between ☰ and ✖
     if (navLinks.classList.contains("active")) {
-      hamburger.innerHTML = "✖"; // Close icon
+      hamburger.innerHTML = "✖";
     } else {
-      hamburger.innerHTML = "☰"; // Hamburger icon
+      hamburger.innerHTML = "☰";
+    }
+  }
+
+  function closeMenu() {
+    var navLinks = document.getElementById("navLinks");
+    var hamburger = document.querySelector(".hamburger");
+
+    // Remove 'active' class and reset icon
+    if (navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
+      hamburger.innerHTML = "☰";
     }
   }
 </script>
